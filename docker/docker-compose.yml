@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+
+  mongo-sms-gateway:
+    container_name: mongo-sms-gateway
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - /var/mongo/mongo-sms-gateway:/data/db
+    ports:
+      - "27018:27017"
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: fsj0h2Ihfddas
+
+  redis-sms-gateway:
+    container_name: redis-sms-gateway
+    command: redis-server --requirepass 123456**
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
