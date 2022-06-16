@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'providers'],function (){
+    Route::controller(\App\Http\Controllers\ProvidersController::class)->group(function () {
+        Route::post('all',              'index');
+        Route::post('create',           'store');
+        Route::post('show/{provider}',  'show');
+        Route::post('update/{provider}','update');
+        Route::post('delete/{provider}','delete');
+    });
 });
