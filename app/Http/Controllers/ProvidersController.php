@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\ProviderRepository;
 use App\Http\Requests\Provider\ProviderStoreRequest;
 use App\Http\Requests\Provider\ProviderUpdateRequest;
-use App\Lib\Logger\Logger;
 use App\Models\Provider;
 use Illuminate\Http\JsonResponse;
 
