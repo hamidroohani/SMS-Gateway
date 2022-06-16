@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Components\Filters\FilterBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Jenssegers\Mongodb\Eloquent\Builder;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class Provider extends Model
 {
