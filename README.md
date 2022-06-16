@@ -42,6 +42,25 @@ db.createUser(
 });
 ```
 
+```
+use test-sms-gateway
+```
+
+```
+db.createUser(
+{
+ user: "user-sms-gateway",
+ pwd:  "97v4MUt8s25G1",
+ roles:
+    [
+        {
+            role:"readWrite",
+            db:"test-sms-gateway"
+        },
+    ]
+});
+```
+
 ## Create database tables
 ```
 php artisan migrate
