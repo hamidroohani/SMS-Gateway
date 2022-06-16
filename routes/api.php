@@ -23,3 +23,9 @@ Route::group(['prefix' => 'providers'],function (){
         Route::post('delete/{provider}','delete');
     });
 });
+
+Route::group(['prefix' => 'messages'],function (){
+    Route::controller(\App\Http\Controllers\MessagesController::class)->group(function () {
+        Route::post('send',    'store');
+    });
+});
