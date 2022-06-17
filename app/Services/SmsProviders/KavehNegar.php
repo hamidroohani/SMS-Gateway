@@ -5,6 +5,7 @@ namespace App\Services\SmsProviders;
 
 
 use App\Contracts\SmsProvider;
+use App\Enums\MessageStatus;
 use App\Services\SmsProviders\Classes\SmsProviderException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\CurlMultiHandler;
@@ -73,11 +74,10 @@ class KavehNegar implements SmsProvider
 
             if (is_array($response) && isset($response['entries']) && isset($response['entries'][0]['status']) && in_array($response['entries'][0]['status'], [1, 2, 4, 5, 6, 10, 11, 13, 14, 100])) {
                 return match ($response['entries'][0]['status']) {
-                    1, 2, 4, 5 => "sending",
-                    10 => "delivered",
-                    14 => "black list",
-                    6, 11, 13 => "failed",
-                    100, "default" => "unknown"
+                    1, 2, 4, 5, 100, "default" => MessageStatus::UNKNOWN_ON_DELIVER,
+                    10 => MessageStatus::DELIVERED,
+                    14 => MessageStatus::BLACK_LIST,
+                    6, 11, 13 => MessageStatus::FAILED_ON_SEND
                 };
             }
             $this->throw_exception();
