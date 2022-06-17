@@ -26,6 +26,7 @@ Route::group(['prefix' => 'providers'],function (){
 
 Route::group(['prefix' => 'messages'],function (){
     Route::controller(\App\Http\Controllers\MessagesController::class)->group(function () {
-        Route::post('send',    'store');
+        Route::post('send',           'store');
+        Route::post('track/{message}','show');
     });
 });
