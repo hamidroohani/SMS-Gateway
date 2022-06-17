@@ -5,6 +5,7 @@ namespace App\Services\SmsProviders;
 
 
 use App\Contracts\SmsProvider;
+use App\Enums\MessageStatus;
 use App\Services\SmsProviders\Classes\SmsProviderException;
 use GuzzleHttp\Handler\CurlMultiHandler;
 use \GuzzleHttp\Promise\PromiseInterface;
@@ -71,10 +72,9 @@ class Qasedak implements SmsProvider
 
             if (isset($response['list']) && in_array($response['list'], [0, 1, 2, 8, 16, 27])) {
                 return match ($response['list']) {
-                    0, 8 => "sending",
-                    1 => "delivered",
-                    2, 16, 27 => "failed",
-                    "default" => "unknown"
+                    0, 8, "default" => MessageStatus::UNKNOWN_ON_DELIVER,
+                    1 => MessageStatus::DELIVERED,
+                    2, 16, 27 => MessageStatus::FAILED_ON_DELIVER
                 };
             }
             $this->throw_exception();
