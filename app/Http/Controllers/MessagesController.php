@@ -42,6 +42,6 @@ class MessagesController extends ResponseController
 
     public function show(Message $message): JsonResponse
     {
-        return $this->success($message);
+        return $this->success(['status' => $message->status]);
     }
 }
