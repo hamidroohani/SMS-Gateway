@@ -39,4 +39,9 @@ class MessagesController extends ResponseController
         $result = $this->messageRepository->store($data);
         return $this->success(['track_id' => $result->_id]);
     }
+
+    public function show(Message $message): JsonResponse
+    {
+        return $this->success(['status' => $message->status]);
+    }
 }
