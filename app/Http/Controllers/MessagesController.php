@@ -7,6 +7,7 @@ use App\Http\Repositories\MessageRepository;
 use App\Http\Requests\Message\MessageStoreRequest;
 use App\Models\Message;
 use App\Models\Provider;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 
 class MessagesController extends ResponseController
@@ -18,9 +19,10 @@ class MessagesController extends ResponseController
         $this->messageRepository = new MessageRepository(new Message());
     }
 
-    public function index()
+    public function index(): view
     {
-        return Message::all();
+        $messages = $this->messageRepository->paginate_cache();
+        return view('pages.messages', compact('messages'));
     }
 
     public function store(MessageStoreRequest $request): JsonResponse
