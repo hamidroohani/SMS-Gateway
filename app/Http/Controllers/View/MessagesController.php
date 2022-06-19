@@ -19,6 +19,7 @@ class MessagesController extends ResponseController
     public function index(): view
     {
         $messages = $this->messageRepository->paginate_cache();
-        return view('pages.messages', compact('messages'));
+        $stats = $this->messageRepository->stats_cache();
+        return view('pages.messages', compact('messages','stats'));
     }
 }

@@ -21,7 +21,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Pending
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $stats['pending'] ?? 0 }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -40,7 +40,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Sent
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $stats['sent'] ?? 0 }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -59,7 +59,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Delivered
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $stats['delivered'] ?? 0 }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -78,7 +78,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Sending
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $stats['sending'] ?? 0 }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -106,6 +106,8 @@
                         <th>Body</th>
                         <th>Status</th>
                         <th>Sent At</th>
+                        <th>Ref Code</th>
+                        <th>Error</th>
                         <th>Created At</th>
                     </tr>
                     </thead>
@@ -117,6 +119,8 @@
                         <th>Body</th>
                         <th>Status</th>
                         <th>Sent At</th>
+                        <th>Ref Code</th>
+                        <th>Error</th>
                         <th>Created At</th>
                     </tr>
                     </tfoot>
@@ -129,6 +133,8 @@
                             <td>{{ str_pad($message->body,50) }}</td>
                             <td>{{ $message->status->value }}</td>
                             <td>{{ $message->sent_at }}</td>
+                            <td>{{ $message->ref_code }}</td>
+                            <td>{{ $message->err_msg }}</td>
                             <td>{{ $message->created_at }}</td>
                         </tr>
                     @endforeach
