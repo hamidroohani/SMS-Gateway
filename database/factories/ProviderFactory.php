@@ -17,7 +17,7 @@ class ProviderFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->randomElement(['kaveh-negar','qasedak','sms-ir','farapayamak']),
             'number' => $this->faker->phoneNumber(),
             'info' => []
         ];
