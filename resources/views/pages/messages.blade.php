@@ -130,7 +130,7 @@
                             <td>{{ $message->Provider->name }}</td>
                             <td>{{ $message->from }}</td>
                             <td>{{ $message->receiver_mobile }}</td>
-                            <td>{{ str_pad($message->body,50) }}</td>
+                            <td>{{ substr($message->body,0,50) . " .." }}</td>
                             <td>{{ $message->status->value }}</td>
                             <td>{{ $message->sent_at }}</td>
                             <td>{{ $message->ref_code }}</td>
@@ -140,6 +140,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {!! $messages->links() !!}
             </div>
         </div>
     </div>
