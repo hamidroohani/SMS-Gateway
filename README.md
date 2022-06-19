@@ -70,6 +70,7 @@ db.createUser(
 });
 ```
 
+Also create another database for test
 ```
 use test-sms-gateway
 ```
@@ -89,6 +90,7 @@ db.createUser(
 });
 ```
 
+exit from docker container and run:
 ```bash
 php artisan key:generate
 ```
@@ -103,6 +105,15 @@ php artisan migrate
 php artisan test
 ```
 `If you're faced with any errors in test, try to find the problems, most of all it happens of connection between services`
+
+## Complete the provider basic information
+```
+nano database/seeders/ProviderSeeder.php
+```
+After that run the seeder
+```
+php artisan db:seed
+```
 
 ## Ask devops to run this command on server and keep it alive
 ```
