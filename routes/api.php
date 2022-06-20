@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'providers'],function (){
-    Route::controller(\App\Http\Controllers\ProvidersController::class)->group(function () {
+    Route::controller(\App\Http\Controllers\Api\ProvidersController::class)->group(function () {
         Route::post('all',              'index');
         Route::post('create',           'store');
         Route::post('show/{provider}',  'show');
@@ -25,7 +25,7 @@ Route::group(['prefix' => 'providers'],function (){
 });
 
 Route::group(['prefix' => 'messages'],function (){
-    Route::controller(\App\Http\Controllers\MessagesController::class)->group(function () {
+    Route::controller(\App\Http\Controllers\Api\MessagesController::class)->group(function () {
         Route::post('send',           'store');
         Route::post('track/{message}','show');
     });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Repositories\ProviderRepository;
 use App\Http\Requests\Provider\ProviderStoreRequest;
