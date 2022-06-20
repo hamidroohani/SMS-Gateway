@@ -20,7 +20,10 @@ class MessagesController extends ResponseController
 
     public function store(MessageStoreRequest $request): JsonResponse
     {
-        $provider = Provider::query()->first(); // TODO it must be change with a logic to find a provider
+        $provider = Provider::query()->where('name', config('sms.default'))->first();
+        if (!$provider) {
+            $provider = Provider::query()->first();
+        }
         if (!$provider) {
             return $this->failed('Unable to find a SMS Provider');
         }
