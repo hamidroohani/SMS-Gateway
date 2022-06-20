@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return redirect(\route('messages.index'));
 });
 
 Route::get('/messages', [\App\Http\Controllers\View\MessagesController::class,'index'])->name('messages.index');
