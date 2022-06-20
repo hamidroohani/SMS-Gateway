@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/messages', [\App\Http\Controllers\View\MessagesController::class,'index'])->name('messages.index');
+Route::get('/providers', [\App\Http\Controllers\View\ProvidersController::class,'index'])->name('providers.index');
