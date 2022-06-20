@@ -31,7 +31,7 @@ class MessageFactory extends Factory
             MessageStatus::BLACK_LIST
         ]));
         return [
-            'provider_id' => Provider::factory(),
+            'provider_id' => $this->faker->randomElement(Provider::query()->pluck("_id")->toArray()),
             'from' => $this->faker->phoneNumber(),
             'receiver_mobile' => $this->faker->phoneNumber(),
             'body' => $this->faker->text(),
