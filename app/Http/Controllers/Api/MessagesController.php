@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Enums\MessageStatus;
 use App\Http\Repositories\MessageRepository;
@@ -16,11 +16,6 @@ class MessagesController extends ResponseController
     public function __construct()
     {
         $this->messageRepository = new MessageRepository(new Message());
-    }
-
-    public function index()
-    {
-        return Message::all();
     }
 
     public function store(MessageStoreRequest $request): JsonResponse
