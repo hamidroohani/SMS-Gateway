@@ -1,34 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: Vazir;
-  src: url(/fonts/Vazir-FD.eot?1828749874c441e3fd96deedc823957d);
-  src: url(/fonts/Vazir-FD.eot?1828749874c441e3fd96deedc823957d?#iefix) format("embedded-opentype"), url(/fonts/Vazir-FD.woff2?7392c9914d1b340bb67555079c54ae33) format("woff2"), url(/fonts/Vazir-FD.woff?b50caabdf3f20d796696e00ad89b57f3) format("woff"), url(/fonts/Vazir-FD.ttf?d44343ba839252b920f7b1cc73e37fb4) format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: Vazir;
-  src: url(/fonts/Vazir-Bold-FD.eot?3a030316d28ec0eb039981d915ac54cf);
-  src: url(/fonts/Vazir-Bold-FD.eot?3a030316d28ec0eb039981d915ac54cf?#iefix) format("embedded-opentype"), url(/fonts/Vazir-Bold-FD.woff2?016d91cbfa82a3014094edfe48fa0d8b) format("woff2"), url(/fonts/Vazir-Bold-FD.woff?62a97e3fd7e87922f6dcb6b1c3a2a179) format("woff"), url(/fonts/Vazir-Bold-FD.ttf?16b507b9ee6198aebb86660806595e64) format("truetype");
-  font-weight: bold;
-}
-@font-face {
-  font-family: Vazir;
-  src: url(/fonts/Vazir-Thin-FD.eot?8e01a6c60791cce26e2a9801df318f22);
-  src: url(/fonts/Vazir-Thin-FD.eot?8e01a6c60791cce26e2a9801df318f22?#iefix) format("embedded-opentype"), url(/fonts/Vazir-Thin-FD.woff2?b2b1ee6d5e9e983e567874cde32552f8) format("woff2"), url(/fonts/Vazir-Thin-FD.woff?5531351a06e87b2a0ff0b3bd3850dd0b) format("woff"), url(/fonts/Vazir-Thin-FD.ttf?ed0440a20fa9e97eaa6039d10ea3da33) format("truetype");
-  font-weight: 100;
-}
-@font-face {
-  font-family: Vazir;
-  src: url(/fonts/Vazir-Light-FD.eot?5f0ee0fe81b8145c7c37e8f4b9850e68);
-  src: url(/fonts/Vazir-Light-FD.eot?5f0ee0fe81b8145c7c37e8f4b9850e68?#iefix) format("embedded-opentype"), url(/fonts/Vazir-Light-FD.woff2?feeb6ea10b779e71aedcd88d02b5263f) format("woff2"), url(/fonts/Vazir-Light-FD.woff?506274c33d713b405f34691006061f8f) format("woff"), url(/fonts/Vazir-Light-FD.ttf?46e4b81a8b759e20a8ad9b6b0761a983) format("truetype");
-  font-weight: 300;
-}
-@font-face {
-  font-family: Vazir;
-  src: url(/fonts/Vazir-Medium-FD.eot?b3cb01932010559deb895e43911df18d);
-  src: url(/fonts/Vazir-Medium-FD.eot?b3cb01932010559deb895e43911df18d?#iefix) format("embedded-opentype"), url(/fonts/Vazir-Medium-FD.woff2?2d6c5ab5a278a4cadfe3d4192040b35e) format("woff2"), url(/fonts/Vazir-Medium-FD.woff?cf23e2af64ef97dfd3c3716f860f873d) format("woff"), url(/fonts/Vazir-Medium-FD.ttf?f1351028a6e458682bf2556347748f68) format("truetype");
-  font-weight: 500;
-}
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
