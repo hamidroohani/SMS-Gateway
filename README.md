@@ -124,3 +124,57 @@ cd /path-to-your-project && php artisan send:sms
 ```
 php artisan serve
 ```
+
+
+# Send a message
+
+This is an example of a `POST` request API for send a message.
+
+## Sample:
+
+````
+POST /api/messages/send
+Accept: application/json
+
+{
+    "body": "salam",
+    "receiver_mobile": "09375775947"
+}
+````
+## Response:
+
+````
+{
+    "status": true,
+    "data": {
+        "track_id": "62aff1e9424f29b97e0a61a3"
+    }
+}
+````
+
+You can use the track id for next Api.
+
+
+# Track a sent message
+
+This is an example of a `POST` request API for track a message that sent before.
+
+## Sample:
+
+````
+POST /api/messages/track/{track_id}
+Accept: application/json
+````
+## Response:
+
+````
+{
+    "status": true,
+    "data": {
+        "status": "pending"
+    }
+}
+````
+
+
+Also, you can use the `postman_file` in the root.

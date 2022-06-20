@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "d17c6510-8272-4a4b-8536-c17e78ac43ec",
+		"name": "SMS Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19073318"
+	},
+	"item": [
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "Provider All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/providers/all",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"providers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjUxMDQ3Njk3LCJleHAiOjE2NTM3NDc2OTcsIm5iZiI6MTY1MTA0NzY5NywianRpIjoibVVwbXFWSXdaeXAzTWxESSIsInN1YiI6IjYyNjhmZDExMzhmYWYxMDFkNDBlOWY4NCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._QLmsyQZTU3KvPuYrs7uaZlYo5q4fuxyHc7t7sWFils",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"sms-ir\",\n    \"number\": \"1000100015\",\n    \"info\":{\n        \"api_key\": \"sdfsdfsdf54654\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/providers/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"providers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjUxMDQ3Njk3LCJleHAiOjE2NTM3NDc2OTcsIm5iZiI6MTY1MTA0NzY5NywianRpIjoibVVwbXFWSXdaeXAzTWxESSIsInN1YiI6IjYyNjhmZDExMzhmYWYxMDFkNDBlOWY4NCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._QLmsyQZTU3KvPuYrs7uaZlYo5q4fuxyHc7t7sWFils",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/providers/show/6296ef5efd9b5a30490ff4a2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"providers",
+								"show",
+								"6296ef5efd9b5a30490ff4a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjUxMDQ3Njk3LCJleHAiOjE2NTM3NDc2OTcsIm5iZiI6MTY1MTA0NzY5NywianRpIjoibVVwbXFWSXdaeXAzTWxESSIsInN1YiI6IjYyNjhmZDExMzhmYWYxMDFkNDBlOWY4NCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._QLmsyQZTU3KvPuYrs7uaZlYo5q4fuxyHc7t7sWFils",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"info\":{\n        \"api_key\": \"sdfsdfsdf54654\",\n        \"secret_key\": \"354fdg54\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/providers/update/6296ef5efd9b5a30490ff4a2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"providers",
+								"update",
+								"6296ef5efd9b5a30490ff4a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Provider Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/providers/delete/6296ef5efd9b5a30490ff4a2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"providers",
+								"delete",
+								"6296ef5efd9b5a30490ff4a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Get new message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"salam\",\n    \"receiver_mobile\": \"09375775947\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/messages/send",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"messages",
+								"send"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Quick - template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"via\": \"sms\",\n    \"client\": \"sso\",\n    \"template\": {\n        \"name\": \"login\",\n        \"token1\": \"1234\"\n    },\n    \"receiver_mobile\": \"09375775947\",\n    \"type\": \"info\",\n    \"quick\":false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/messages/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"messages",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Quick - template",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"via\": \"sms\",\n    \"client\": \"sso\",\n    \"template\": {\n        \"name\": \"login\",\n        \"token1\": \"1234\"\n    },\n    \"receiver_mobile\": \"09375775947\",\n    \"type\": \"info\",\n    \"quick\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/messages/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"messages",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Message track",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/messages/track/62aff1e9424f29b97e0a61a3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"messages",
+								"track",
+								"62aff1e9424f29b97e0a61a3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
