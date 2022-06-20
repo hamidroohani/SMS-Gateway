@@ -90,6 +90,32 @@
     </div>
     <!-- Page Heading -->
 
+    <form method="get" action="{{ route('messages.index') }}"
+        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="row">
+            <div class="input-group">
+                <select class="form-control bg-light border-0 small" name="key"
+                        aria-label="Search" aria-describedby="basic-addon2">
+                    <option value="">Choose to start search</option>
+                    <option value="from" @if(request()->input('key') == 'from') selected @endif>From</option>
+                    <option value="receiver_mobile" @if(request()->input('key') == 'receiver_mobile') selected @endif>Receiver Mobile</option>
+                    <option value="status" @if(request()->input('key') == 'status') selected @endif>Status</option>
+                </select>
+
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" name="value" value="{{ request()->input('value') }}" placeholder="Value to search .."
+                       aria-label="Search" aria-describedby="basic-addon2">
+
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    Search
+                </button>
+            </div>
+        </div>
+    </form>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

@@ -19,7 +19,7 @@ class MessageRepository
         $filters = [];
 
         foreach ($fillables as $fillable) {
-            $filters[$fillable] = request()->input($fillable);
+            $filters[$fillable] = request()->get($fillable);
         }
 
         return $this->message->withAll()->filterBy($filters)->latest()->paginate();
