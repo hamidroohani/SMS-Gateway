@@ -178,3 +178,10 @@ Accept: application/json
 
 
 Also, you can use the `postman_file` in the root.
+
+## Second SMS to send SMS (Using RabbitMQ)
+```
+cd /path-to-your-project && php artisan amqp:consume
+```
+
+Note: Between those two command for send sms, use just one of them

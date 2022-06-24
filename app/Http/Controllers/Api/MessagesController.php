@@ -7,6 +7,7 @@ use App\Http\Repositories\MessageRepository;
 use App\Http\Requests\Message\MessageStoreRequest;
 use App\Models\Message;
 use App\Models\Provider;
+use App\Services\AMQP\AMQP;
 use Illuminate\Http\JsonResponse;
 
 class MessagesController extends ResponseController
@@ -18,7 +19,7 @@ class MessagesController extends ResponseController
         $this->messageRepository = new MessageRepository(new Message());
     }
 
-    public function store(MessageStoreRequest $request): JsonResponse
+    public function store(MessageStoreRequest $request, AMQP $AMQP): JsonResponse
     {
         $provider = Provider::query()->where('name', config('sms.default'))->first();
         if (!$provider) {
@@ -35,6 +36,7 @@ class MessagesController extends ResponseController
             'status' => MessageStatus::PENDING,
         ];
         $result = $this->messageRepository->store($data);
+        $AMQP->send('send-sms', $result);
         return $this->success(['track_id' => $result->_id]);
     }
 
